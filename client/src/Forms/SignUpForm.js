@@ -62,7 +62,6 @@ export default function SignUpForm() {
     .then((res)=> {
       setSpin(false);
       if (res.status >= 500) {
-        console.log('status', res.status);
         setMsg('');
         setErr_msg(res.statusText);
         return false;
@@ -71,7 +70,6 @@ export default function SignUpForm() {
       }
     })
     .then((resp)=> {
-      console.log(resp);
       if (resp.error) {
         setMsg('');
         setErr_msg(resp.error);

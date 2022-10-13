@@ -9,12 +9,12 @@ export const signUp = async (
   if (!req.body.email || !req.body.password) {
     return res
       .status(400)
-      .json({ msg: "Please. Send your email and password" });
+      .json({ error: "Please. Send your email and password" });
   }
 
   const user = await User.findOne({ email: req.body.email });
   if (user) {
-    return res.status(400).json({ msg: "The User already Exists" });
+    return res.status(400).json({ error: "The User already Exists" });
   }
 
   const newUser = new User(req.body);
@@ -30,20 +30,19 @@ export const login = async (
   if (!req.body.email || !req.body.password) {
     return res
       .status(400)
-      .json({ msg: "Please. Send your email and password" });
+      .json({ error: "Please. Send your email and password" });
   }
 
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return res.status(400).json({ msg: "The User does not exist" });
+    return res.status(400).json({ error: "The User does not exist" });
   }
-  // console.log('user', user)
   const isMatch = await user.comparePassword(req.body.password);
   if (isMatch) {
     return res.status(200).json({ token: createToken(user) });
   }
 
   return res.status(400).json({
-    msg: "The email or password are incorrect"
+    error: "The email or password are incorrect"
   });
 };

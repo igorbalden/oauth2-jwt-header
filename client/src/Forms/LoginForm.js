@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 import { useSpinner } from '../Layout/Spinner/Spinner';
 import Messages from '../Layout/Messages/Messages';
@@ -65,7 +64,6 @@ export default function LoginForm() {
     })
     .then(res => {
       setSpin(false);
-      // console.log({res})
       if (res.status >= 500) {
         setMsg('');
         setErr_msg(res.statusText);
@@ -76,7 +74,6 @@ export default function LoginForm() {
       }
     })
     .then(resp => {
-      // console.log({resp})
       // Error 4xx. resp.error is my msg added in backend
       if (resp.error) {
         setMsg('');

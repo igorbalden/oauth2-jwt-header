@@ -50,9 +50,6 @@ router.get(
     scope: ["profile", "email"]
   }),
   async (req: Request, res: Response)=> {
-    // console.log('1', new Date().toISOString())
-    // await pause(1);
-    
     const gUser = req.user as Guser;
     const email = gUser?.emails?.[0]?.value;
     const dbUser = await User.findOne({ email: email });
