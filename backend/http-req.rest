@@ -18,7 +18,7 @@ Content-type: application/json
 ###
 
 GET http://localhost:5000/dashboard
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGI2YjcwZDExMDIzY2ZkYTdjOGQ2ZCIsImVtYWlsIjoidTFAaG9zdC5sbyIsImlhdCI6MTY2NTMzNzUyNSwiZXhwIjoxNjY1NDIzOTI1fQ.jspH37kK4bk_acBYMFaMX9Fpvuxg_kB0723rf91PvFA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg0NjAxZDNkNmViMDU0YTM4MjEzMSIsImVtYWlsIjoidTFAaG9zdC5sbyIsImlhdCI6MTY2NTgxOTE2OCwiZXhwIjoxNjY1OTA1NTY4fQ.vn4egtLyApNdCbb3Ffd7jlPjuZBpL9KD6MUcRgTK1yI
 ###
 
 GET http://localhost:5000/
