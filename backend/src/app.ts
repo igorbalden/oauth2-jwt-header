@@ -3,12 +3,12 @@ import express, { NextFunction, Request, Response } from 'express'
 import passport from 'passport'
 import cors from 'cors';
 import morgan from 'morgan';
-
 import { AppError, errorHandler } from './utils/error-handling';
 import {localJwtStrategy, googleStrategy} from './middlewares/passport';
 import authRoutes from './routes/auth.routes';
 import protectedRoutes from './routes/protected.routes';
 import config from './config/config';
+import './database';
 
 
 export function createApp() {
@@ -51,9 +51,9 @@ export function createApp() {
     res: Response,
     next: NextFunction
   ) => {
-    errorHandler.handleError(
-      new AppError('error caught', err.message, 500, false, err)
-    );
+      errorHandler.handleError(
+        new AppError('error caught', err.message, 500, false, err)
+      );
   });
 
   return app;
